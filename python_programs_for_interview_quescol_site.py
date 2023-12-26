@@ -93,4 +93,14 @@ def convert_number_to_binary(n):
     print("Binary number is ", binary, " for ", n)
 
 
-convert_number_to_binary(18)
+# convert_number_to_binary(18)
+
+
+def check_year_is_leap_year(n):
+    if n % 4 == 0 and n % 100 != 0 or n % 400 == 0:
+        print(f"Year {n} is the Leap year")
+    else:
+        print(f"Year {n} is the Not a Leap year")
+
+
+check_year_is_leap_year(2000)
