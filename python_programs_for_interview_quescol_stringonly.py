@@ -289,6 +289,8 @@ def calculate_alphabets_digits_special_character_spaces(n):
             digit_count += 1
         elif char == " ":
             spaces_count += 1
+        elif char.isalnum():
+            special_character_count += 1
         else:
             special_character_count += 1
     print(f"In the provided string character count is {char_count}, digit count is {digit_count}, spaces count is {spaces_count} and special character count is {special_character_count}")
@@ -331,7 +333,7 @@ def concatenate_using_join_function(*args):
     print(concatenate_string)
 
 
-concatenate_using_join_function("Program", "To", "Concatenate", "All", "Strings")
+# concatenate_using_join_function("Program", "To", "Concatenate", "All", "Strings")
 
 
 # Python program to concatenate two strings without using join() method.
@@ -343,4 +345,106 @@ def concatenate_all_the_args(*args):
 
 
 # concatenate_all_the_args("Program", "To", "Concatenate", "All", "Strings")
+
+# Python program to remove repeated character from string.
+
+def remove_repeated_characters_from_string(n):
+    updated_string = ""
+    for char in n:
+        if char in updated_string and char != " ":
+            char = ""
+        updated_string += char
+    print(updated_string)
+
+
+# remove_repeated_characters_from_string("String to remove repeated character like aa, bb, cc")
+
+
+# Python program to remove repeated character from string using Join.
+
+def remove_repeated_characters_from_string_using_join(n):
+    updated_string_list = []
+    for char in n:
+        if char not in updated_string_list and char != " ":
+            updated_string_list.append(char)
+        "".join(updated_string_list)
+    print(updated_string_list)
+    print("".join(updated_string_list))
+
+
+# remove_repeated_characters_from_string_using_join("String to remove repeated character like aa, bb, cc")
+
+
+# Python program to remove repeated character from string using Join and comprehension.
+# Need to learn more about list comprehension
+'''def remove_repeated_characters_from_string_using_join_using_comprehension(n):
+    updated_string_list = []
+    # comprehension_list = [char for char in n if char not in updated_string_list and char != " " updated_string_list.append(char)]
+    new_comprehension_list = ["".join(updated_string_list) for char in n if char in updated_string_list updated_string_list.append(char)]
+    print(new_comprehension_list)
+
+
+remove_repeated_characters_from_string_using_join_using_comprehension("String to remove repeated character like aa, bb, cc")
+'''
+
+# Python program to print all non repeating character in string.
+
+
+def create_repeating_non_repeating_characters_list(n):
+    non_repeating_char_list = []
+    repeating_char_list = []
+    answer_list = []
+    for char in n:
+        if char not in non_repeating_char_list and char != " ":
+            non_repeating_char_list.append(char)
+        elif char in non_repeating_char_list and char not in repeating_char_list and char != " ":
+            repeating_char_list.append(char)
+    print("".join(non_repeating_char_list))
+    print("".join(repeating_char_list))
+    for newchar in non_repeating_char_list:
+        if newchar not in repeating_char_list:
+            answer_list.append(newchar)
+    print("".join(answer_list))
+
+
+# create_repeating_non_repeating_characters_list("String to validate repeating and non repeating characters using list")
+# Python program to calculate sum of integers in string.
+
+
+def calculate_sum_of_integers_in_string(n):
+    i = 0
+    for char in n:
+        if char.isdigit():
+            i += int(char)
+    print(i)
+
+
+# calculate_sum_of_integers_in_string("1st String to add numbers like 1,2,3,4 and print sum of all numbers like 44, 55")
+
+
+# Python Program to Copy one String to Another String
+
+def copy_one_string_to_another(n, m):
+    joined_string = n + m
+    print(joined_string)
+
+
+# copy_one_string_to_another("First", "Second")
+
+
+# Python program to sort string character in ascending order:
+
+def sort_string_ascending_and_descending_order(n):
+    updated_string = ""
+    for char in n.lower():
+        if char not in updated_string and char != " ":
+            updated_string += char
+    ascending_order = "".join(sorted(updated_string))
+    descending_order = "".join(sorted(updated_string, reverse=True))
+    print(ascending_order)
+    print(descending_order)
+
+
+sort_string_ascending_and_descending_order("String to sort in ascending order and descending order")
+
 

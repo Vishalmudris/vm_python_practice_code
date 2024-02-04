@@ -81,18 +81,31 @@ def armstrong_number_comprehension():
 def fibonacci_series_n_numbers_iterative():
     n = 10
     first, second = 0, 1
-    #febonacci_list = []
+    feb_list = []
     print("fibonacci series are : ")
     for i in range(0, n):
         if i <= 1:
             result = i
+            feb_list.append(i)
         else:
             result = first + second
             first, second = second, result
-        print(result)
+            feb_list.append(result)
+    print(feb_list)
 
 
 # fibonacci_series_n_numbers_iterative()
+
+def fibonacci_series_n_numbers_iterative_easy(n):
+    a, b = 0, 1
+    feb_series = []
+    for i in range(0,n):
+        feb_series.append(a)
+        a, b = b, b + a
+    print(feb_series)
+
+
+fibonacci_series_n_numbers_iterative_easy(8)
 
 
 def fibonacci_series_n_numbers_recursive(n):
@@ -136,10 +149,9 @@ def palindrome_check_iteration(n):
     reverse = 0
     while n > 0:
         print("Initial reverse and n : ", reverse, n)
-        a = reverse * 10
         b = n % 10
         print("Next reverse and n : ", reverse, n)
-        reverse = a + b
+        reverse = reverse * 10 + b
         n = n // 10
 
     print(reverse)
@@ -346,7 +358,6 @@ def first_n_prime_numbers(n):
     prime_no_list = []
     for i in range(1, n):
         for j in range(2, i):
-            print(1, j)
             if i % j == 0:
                 break
         else:
@@ -354,7 +365,7 @@ def first_n_prime_numbers(n):
     print(prime_no_list)
 
 
-# first_n_prime_numbers(50)
+first_n_prime_numbers(50)
 
 
 def prime_number():
@@ -373,7 +384,22 @@ def prime_number():
 
 # print(prime_number())
 
+# Check Number is prime or not:
+def check_number_is_prime(n):
+    flag = False
+    for i in range(1, n):
+        for j in range(2, i):
+            if i % j == 0:
+                flag = True
+                break
+    print(flag)
+    if flag is True:
+        print("Number is NOT a prime number")
+    else:
+        print("Number is prime number")
 
+
+check_number_is_prime(31)
 ######################################
 
 # Python Program to find smallest number among three.
@@ -456,7 +482,7 @@ def square_cube_square_root_of_number_without_math(**kwargs):
 
 
 data = {"a": 2, "b": 3, "c": 4, "d": 5, "e": 6, "f": 7, "g": 8, "h": 9, "i": 10}
-square_cube_square_root_of_number_without_math(**data)
+# square_cube_square_root_of_number_without_math(**data)
 
 #####################################################
 # Python program to calculate LCM of given two numbers.
@@ -486,7 +512,7 @@ def lcm_of_two_numbers(num1, num2):
     print(lcm_of_numbers)
 
 
-#lcm_of_two_numbers(36, 8)
+# lcm_of_two_numbers(36, 8)
 
 
 #######################
@@ -517,7 +543,7 @@ def hcf_of_two_number_iterative(num1, num2):
     print(hcf)
 
 
-#hcf_of_two_number_iterative(8, 22)
+# hcf_of_two_number_iterative(8, 22)
 
 # HFC of two numbers using recustion, where function calls itself
 
@@ -563,4 +589,81 @@ def check_year_is_leap_year(n):
         print(f"Year {n} is the Not a Leap year")
 
 
-check_year_is_leap_year(2000)
+# check_year_is_leap_year(2000)
+
+'''Write a program to print the following pattern in python
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * * * *
+* * * * * * *
+* * * * * * * *
+'''
+
+
+def print_the_following_pattern(n):
+    for i in range(0, n + 1):
+        for j in range(0, i):
+            print("* ", end=" ")
+        print("\r")
+
+
+# print_the_following_pattern(8)
+
+
+'''Write a program to print the following pattern in python
+1
+1 2
+1 2 3
+1 2 3 4
+
+'''
+
+
+def print_above_pattern_in_python(n):
+    for i in range(0, n + 1):
+        num = 1
+        for j in range(0, i):
+            print(num, end=" ")
+            num += 1
+        print("\r")
+
+
+# print_above_pattern_in_python(4)
+
+'''
+1 
+2 3 
+4 5 6 
+7 8 9 10
+'''
+def print_above_pattern_in_python(n):
+    num = 1
+    for i in range(0, n + 1):
+        for j in range(0, i):
+            print(num, end=" ")
+            num += 1
+        print("\r")
+
+
+print_above_pattern_in_python(4)
+# Number is perfect validate:
+'''A perfect number is a positive integer that is equal to the sum of its positive divisors, excluding the number itself.
+
+Let’s understand it with an example
+
+6 is a positive number and its divisor is 1,2,3'''
+def check_perfect_number(n):
+    sum = 0
+    for i in range(1, n):
+        if n % i == 0:
+            sum += i
+    if sum == n:
+        print("Number is perfect")
+    else:
+        print("Number is not perfect")
+
+
+# check_perfect_number(6)

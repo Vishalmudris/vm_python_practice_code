@@ -101,13 +101,16 @@ def zip_for_list_return_tuples_list():
     print(list(zip(first, second)))
 
 
+# zip_for_list_return_tuples_list()
 def zip_for_set_return_tuples_dict():
     first_number_list = {2, 22, 222, 2222}
     second_number_list = {4, 44, 444, 4444}
+    print(first_number_list)
+    print(second_number_list)
     print(list(zip(first_number_list,second_number_list)))
 
 
-#zip_for_set_return_tuples_dict()
+# zip_for_set_return_tuples_dict()
 
 # List Comprehension #
 
@@ -380,7 +383,7 @@ def positive_negative_array():
 
 ####=====================================================####
 #CLASS Examples
-
+'''
 class Person:
     def __new__(cls, *args, **kwargs):
         print("Creating new persons object")
@@ -394,7 +397,7 @@ class Person:
 
     def for_module_in_class(self):
         print(f"this is the module method inside the class to check {self.employeename}, {self.emloyeeage}, {self.employeecity}")
-
+xxxxxxxxxxxxxxxx
 
 #person = Person()
 person1 = Person("name", "student", "scope", age=10, city="city")
@@ -403,7 +406,7 @@ person2 = Person("Vishal", "secondargs",age=40, city="Bhopal")
 person_module_in_class_person1 = person1.for_module_in_class()
 person_module_in_class_person2 = person2.for_module_in_class()
 
-
+'''
 
 
 
